@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title_head %}Catálogo{% endblock title_head %}
+
+{% block contenido %}
+<h1>Catálogo de Autos</h1>
+
+<div style="display:flex; flex-wrap:wrap; gap:20px;">
+    {% for auto in autos %}
+    <div style="border:1px solid #ddd; padding:10px; border-radius:6px; width:200px; text-align:center;">
+        
+        {% if auto.modelo == "Corolla" %}
+            <img src="{% static 'images/toyota corolla.jpg' %}" alt="Toyota Corolla" style="width:100%; height:auto; border-radius:4px;">
+        {% elif auto.modelo == "Civic" %}
+            <img src="{% static 'images/honda civic.jpg' %}" alt="Honda Civic" style="width:100%; height:auto; border-radius:4px;">
+        {% elif auto.modelo == "Focus" %}
+            <img src="{% static 'images/ford focus.jpg' %}" alt="Ford Focus" style="width:100%; height:auto; border-radius:4px;">
+        {% elif auto.modelo == "Maverick" %}
+            <img src="{% static 'images/ford maverick.jpg' %}" alt="Ford Focus" style="width:100%; height:auto; border-radius:4px;">
+        {% elif auto.modelo == "Ecosport" %}
+            <img src="{% static 'images/ford ecosport.jpg' %}" alt="Ford Focus" style="width:100%; height:auto; border-radius:4px;">
+        {% elif auto.modelo == "Tiguan" %}
+            <img src="{% static 'images/volkswagen tiguan.jpg' %}" alt="Ford Focus" style="width:100%; height:auto; border-radius:4px;">
+        {% elif auto.modelo == "Vento" %}
+            <img src="{% static 'images/volkswagen vento.jpg' %}" alt="Ford Focus" style="width:100%; height:auto; border-radius:4px;">
+        {% elif auto.modelo == "Virtus" %}
+            <img src="{% static 'images/volkswagen virtus.jpg' %}" alt="Ford Focus" style="width:100%; height:auto; border-radius:4px;">
+        {% elif auto.modelo == "Nivus" %}
+            <img src="{% static 'images/volkswagen nivus.jpg' %}" alt="Ford Focus" style="width:100%; height:auto; border-radius:4px;">
+        {% elif auto.modelo == "Cruze" %}
+            <img src="{% static 'images/chevrolet cruze.jpg' %}" alt="Ford Focus" style="width:100%; height:auto; border-radius:4px;">
+        {% elif auto.modelo == "Onix" %}
+            <img src="{% static 'images/chevrolet Onix.jpg' %}" alt="Ford Focus" style="width:100%; height:auto; border-radius:4px;">
+        {% else %}
+            <div style="width:100%; height:120px; background:#eee; display:flex; align-items:center; justify-content:center;">
+                Sin imagen
+            </div>
+        {% endif %}
+
+        <h3>{{ auto.marca }} {{ auto.modelo }}</h3>
+        <p>Año: {{ auto.year }}</p>
+        <p>Kilómetros: {{ auto.kilometros }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock contenido %}

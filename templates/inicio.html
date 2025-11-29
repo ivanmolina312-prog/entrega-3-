@@ -1,8 +1,73 @@
-{% extends "base.html" %} 
-{% block title_head%}Inicio{% endblock title_head %}
+{% extends "base.html" %}
+
+{% block title_head %}Inicio{% endblock title_head %}
 
 {% block contenido %}
-<h1>Hola soy el proyecto</h1>
+<style>
+    .hero {
+        background: #1e88e5;
+        color: white;
+        padding: 40px;
+        border-radius: 10px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .seccion {
+        background: #f3f3f3;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .boton {
+        display: inline-block;
+        background: #1e88e5;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .boton:hover {
+        background: #1565c0;
+    }
+
+    .lista {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .lista li {
+        background: white;
+        padding: 12px;
+        margin: 8px 0;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+    }
+</style>
+
+<div class="hero">
+    <h1>Bienvenido a VentaCar</h1>
+    <p>Tu sitio de confianza para encontrar el auto perfecto</p>
+    <a href={% url 'catalogo_autos' %} class="boton">Ver Catálogo</a>
+</div>
+
+<div class="seccion">
+    <h2>¿Qué ofrecemos?</h2>
+    <ul class="lista">
+        <li>Autos usados y nuevos</li>
+        <li>Asesoramiento personalizado</li>
+        <li>Financiación disponible</li>
+    </ul>
+</div>
+
+<div class="seccion">
+    <h2>Accesos rápidos</h2>
+    <a href="/usuarios/iniciar-sesion/" class="boton">Iniciar Sesión</a>
+    <a href="/usuarios/registro/" class="boton" style="margin-left:10px;">Registrarse</a>
+</div>
+
 {% endblock contenido %}
-
-

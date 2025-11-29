@@ -1,12 +1,10 @@
 {% extends "base.html" %} 
-{% block title_head%}Crear Auto{% endblock title_head %}
-
+{% block title_head %}Crear Auto{% endblock title_head %}
 {% block contenido %}
     
     <form action={% url "crear" %} method ='POST' enctype='multipart/form-data'>
     {% csrf_token %}
-        
-        {{formulario}}
+    {{formulario}}
         {% comment%} <label for="marca">
         Marca:
         <input type="text" name="marca">
@@ -18,6 +16,8 @@
         
           <button> Crear </button>  {% endcomment %} 
         <input type="submit" value="crear" >
+        <input type="number" name="year" value="2020">
+        <input type="number" name="kilometros" value="0">
 
 
     </form>

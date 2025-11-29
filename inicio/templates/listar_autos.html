@@ -1,7 +1,6 @@
 {% extends "base.html" %} 
-{% block title_head%}Listar Autos{% endblock title_head %}
- 
- {% block contenido %}
+{% block title_head %}Listar Autos{% endblock title_head %}
+{% block contenido %}
 
      <form action={% url "listado" %} method="get">
         {{formulario}}

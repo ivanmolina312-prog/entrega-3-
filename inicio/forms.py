@@ -1,4 +1,5 @@
 from django import forms
+from .models import Auto
 
 
 
@@ -9,3 +10,8 @@ class CrearAuto(forms.Form):
 
 class BuscarAuto(forms.Form):
     modelo = forms.CharField(max_length=30, required=False)
+
+class AutoForm(forms.ModelForm):
+    class Meta:
+        model = Auto
+        fields = ["marca", "modelo", "year", "kilometros"]

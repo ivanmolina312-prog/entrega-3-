@@ -15,7 +15,7 @@ def iniciar_sesion(request):
             return redirect('inicio')
     else:
         formulario =AuthenticationForm()
-    return redirect('inicio')
+    return render(request, 'iniciar_sesion.html', {'formulario': formulario})
 
 def registro(request):
     
